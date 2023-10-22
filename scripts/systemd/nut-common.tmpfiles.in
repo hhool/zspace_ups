@@ -1,0 +1,5 @@
+# State file (e.g. upsd to driver) and pidfile location for NUT:
+d @STATEPATH@/nut 0770 @RUN_AS_USER@ @RUN_AS_GROUP@ - -
+X @STATEPATH@/nut
+d @PIDPATH@/nut 0770 @RUN_AS_USER@ @RUN_AS_GROUP@ - -
+X @PIDPATH@/nut
