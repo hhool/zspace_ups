@@ -11,17 +11,6 @@ notify 100 {
 	action "chgrp @RUN_AS_GROUP@ /dev/$cdev; chmod g+rw /dev/$cdev";
 };
 
-# Zspace
-#  Zspace  - usbhid-ups
-notify 100 {
-	match "system"		"USB";
-	match "subsystem"	"DEVICE";
-	match "type"		"ATTACH";
-	match "vendor"		"0x036AA";
-	match "product"		"0x0101";
-	action "chgrp @RUN_AS_GROUP@ /dev/$cdev; chmod g+rw /dev/$cdev";
-};
-
 # Hewlett Packard
 #  e.g. ?  - usbhid-ups
 notify 100 {
@@ -1118,6 +1107,17 @@ notify 100 {
 	match "type"		"ATTACH";
 	match "vendor"		"0x2e66";
 	match "product"		"0x0300";
+	action "chgrp @RUN_AS_GROUP@ /dev/$cdev; chmod g+rw /dev/$cdev";
+};
+
+# Cyber Power Systems
+#  U2600  - usbhid-ups
+notify 100 {
+	match "system"		"USB";
+	match "subsystem"	"DEVICE";
+	match "type"		"ATTACH";
+	match "vendor"		"0x36AA";
+	match "product"		"0x0101";
 	action "chgrp @RUN_AS_GROUP@ /dev/$cdev; chmod g+rw /dev/$cdev";
 };
 
