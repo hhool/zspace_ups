@@ -52,6 +52,7 @@ typedef struct {
 static usb_device_id_t usb_device_table[] = {
 
 	{ 0x0001, 0x0000, "nutdrv_qx" },
+	{ 0x036AA, 0x0101, "usbhid-ups" },
 	{ 0x03f0, 0x0001, "usbhid-ups" },
 	{ 0x03f0, 0x1f01, "bcmxcp_usb" },
 	{ 0x03f0, 0x1f02, "bcmxcp_usb" },

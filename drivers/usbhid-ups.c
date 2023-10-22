@@ -56,6 +56,7 @@
 	#include "powervar-hid.h"
 	#include "salicru-hid.h"
 	#include "tripplite-hid.h"
+	#include "zspace-hid.h"
 #endif
 
 /* Reference list of avaiable subdrivers */
@@ -79,6 +80,7 @@ static subdriver_t *subdriver_list[] = {
 	&powervar_subdriver,
 	&salicru_subdriver,
 	&tripplite_subdriver,
+	&zspace_subdriver,
 #endif
 	NULL
 };

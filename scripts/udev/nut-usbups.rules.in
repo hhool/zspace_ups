@@ -9,6 +9,10 @@ LABEL="nut-usbups_rules_real"
 #  SNR-UPS-LID-XXXX UPSes  - nutdrv_qx
 ATTR{idVendor}=="0001", ATTR{idProduct}=="0000", MODE="664", GROUP="@RUN_AS_GROUP@"
 
+# Zspace
+#  Zspace  - usbhid-ups
+ATTR{idVendor}=="036AA", ATTR{idProduct}=="0101", MODE="664", GROUP="@RUN_AS_GROUP@"
+
 # Hewlett Packard
 #  e.g. ?  - usbhid-ups
 ATTR{idVendor}=="03f0", ATTR{idProduct}=="0001", MODE="664", GROUP="@RUN_AS_GROUP@"

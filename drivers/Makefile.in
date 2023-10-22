@@ -553,14 +553,14 @@ am__usbhid_ups_SOURCES_DIST = usbhid-ups.c libhid.c libusb0.c \
 	belkin-hid.c cps-hid.c explore-hid.c liebert-hid.c mge-hid.c \
 	powercom-hid.c tripplite-hid.c idowell-hid.c openups-hid.c \
 	powervar-hid.c delta_ups-hid.c ever-hid.c legrand-hid.c \
-	salicru-hid.c
+	salicru-hid.c zspace-hid.c
 am__objects_6 = apc-hid.$(OBJEXT) arduino-hid.$(OBJEXT) \
 	belkin-hid.$(OBJEXT) cps-hid.$(OBJEXT) explore-hid.$(OBJEXT) \
 	liebert-hid.$(OBJEXT) mge-hid.$(OBJEXT) powercom-hid.$(OBJEXT) \
 	tripplite-hid.$(OBJEXT) idowell-hid.$(OBJEXT) \
 	openups-hid.$(OBJEXT) powervar-hid.$(OBJEXT) \
 	delta_ups-hid.$(OBJEXT) ever-hid.$(OBJEXT) \
-	legrand-hid.$(OBJEXT) salicru-hid.$(OBJEXT)
+	legrand-hid.$(OBJEXT) salicru-hid.$(OBJEXT) zspace-hid.$(OBJEXT)
 am_usbhid_ups_OBJECTS = usbhid-ups.$(OBJEXT) libhid.$(OBJEXT) \
 	$(am__objects_1) hidparser.$(OBJEXT) usb-common.$(OBJEXT) \
 	$(am__objects_6)
@@ -647,7 +647,7 @@ am__depfiles_remade = ./$(DEPDIR)/adelsystem_cbi.Po \
 	./$(DEPDIR)/powervar-hid.Po ./$(DEPDIR)/rhino.Po \
 	./$(DEPDIR)/richcomm_usb.Po ./$(DEPDIR)/riello.Po \
 	./$(DEPDIR)/riello_ser.Po ./$(DEPDIR)/riello_usb.Po \
-	./$(DEPDIR)/safenet.Po ./$(DEPDIR)/salicru-hid.Po \
+	./$(DEPDIR)/safenet.Po ./$(DEPDIR)/salicru-hid.Po ./$(DEPDIR)/zspace-hid.Po \
 	./$(DEPDIR)/serial.Plo ./$(DEPDIR)/skel.Po \
 	./$(DEPDIR)/snmp_ups-apc-ats-mib.Po \
 	./$(DEPDIR)/snmp_ups-apc-mib.Po \
@@ -1116,7 +1116,7 @@ skel_LDADD = $(LDADD_DRIVERS)
 @WITH_LIBUSB_1_0_TRUE@LIBUSB_IMPL = libusb1.c
 USBHID_UPS_SUBDRIVERS = apc-hid.c arduino-hid.c belkin-hid.c cps-hid.c explore-hid.c \
  liebert-hid.c mge-hid.c powercom-hid.c tripplite-hid.c idowell-hid.c \
- openups-hid.c powervar-hid.c delta_ups-hid.c ever-hid.c legrand-hid.c salicru-hid.c
+ openups-hid.c powervar-hid.c delta_ups-hid.c ever-hid.c legrand-hid.c salicru-hid.c zspace-hid.c
 
 usbhid_ups_SOURCES = usbhid-ups.c libhid.c $(LIBUSB_IMPL) hidparser.c	\
  usb-common.c $(USBHID_UPS_SUBDRIVERS)
@@ -1244,7 +1244,7 @@ dist_noinst_HEADERS = apc-mib.h apc-iem-mib.h apc-hid.h arduino-hid.h baytech-mi
  xppc-mib.h huawei-mib.h eaton-ats16-nmc-mib.h eaton-ats16-nm2-mib.h apc-ats-mib.h raritan-px2-mib.h eaton-ats30-mib.h \
  apc-pdu-mib.h ever-hid.h eaton-pdu-genesis2-mib.h eaton-pdu-marlin-mib.h eaton-pdu-marlin-helpers.h \
  eaton-pdu-pulizzi-mib.h eaton-pdu-revelation-mib.h emerson-avocent-pdu-mib.h legrand-hid.h \
- hpe-pdu-mib.h powervar-hid.h delta_ups-hid.h generic_modbus.h salicru-hid.h adelsystem_cbi.h
+ hpe-pdu-mib.h powervar-hid.h delta_ups-hid.h generic_modbus.h salicru-hid.h zspace-hid.h adelsystem_cbi.h
 
 
 # Define a dummy library so that Automake builds rules for the
@@ -1764,6 +1764,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/riello_usb.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/safenet.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/salicru-hid.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/zspace-hid.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/serial.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/skel.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/snmp_ups-apc-ats-mib.Po@am__quote@ # am--include-marker
@@ -2818,6 +2819,7 @@ distclean: distclean-am
 	-rm -f ./$(DEPDIR)/riello_usb.Po
 	-rm -f ./$(DEPDIR)/safenet.Po
 	-rm -f ./$(DEPDIR)/salicru-hid.Po
+	-rm -f ./$(DEPDIR)/zspace-hid.Po
 	-rm -f ./$(DEPDIR)/serial.Plo
 	-rm -f ./$(DEPDIR)/skel.Po
 	-rm -f ./$(DEPDIR)/snmp_ups-apc-ats-mib.Po
@@ -3008,6 +3010,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ./$(DEPDIR)/riello_usb.Po
 	-rm -f ./$(DEPDIR)/safenet.Po
 	-rm -f ./$(DEPDIR)/salicru-hid.Po
+	-rm -f ./$(DEPDIR)/zspace-hid.Po
 	-rm -f ./$(DEPDIR)/serial.Plo
 	-rm -f ./$(DEPDIR)/skel.Po
 	-rm -f ./$(DEPDIR)/snmp_ups-apc-ats-mib.Po

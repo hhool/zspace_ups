@@ -195,7 +195,7 @@ LIBUSB_IMPL = libusb1.c
 endif
 USBHID_UPS_SUBDRIVERS = apc-hid.c arduino-hid.c belkin-hid.c cps-hid.c explore-hid.c \
  liebert-hid.c mge-hid.c powercom-hid.c tripplite-hid.c idowell-hid.c \
- openups-hid.c powervar-hid.c delta_ups-hid.c ever-hid.c legrand-hid.c salicru-hid.c
+ openups-hid.c powervar-hid.c delta_ups-hid.c ever-hid.c legrand-hid.c salicru-hid.c zspace-hid.c
 usbhid_ups_SOURCES = usbhid-ups.c libhid.c $(LIBUSB_IMPL) hidparser.c	\
  usb-common.c $(USBHID_UPS_SUBDRIVERS)
 usbhid_ups_LDADD = $(LDADD_DRIVERS) $(LIBUSB_LIBS) -lm
@@ -327,7 +327,7 @@ dist_noinst_HEADERS = apc-mib.h apc-iem-mib.h apc-hid.h arduino-hid.h baytech-mi
  main.h mge-hid.h mge-mib.h mge-utalk.h		\
  mge-xml.h microdowell.h microsol-apc.h microsol-common.h netvision-mib.h netxml-ups.h nut-ipmi.h oneac.h		\
  powercom.h powerpanel.h powerp-bin.h powerp-txt.h powerware-mib.h raritan-pdu-mib.h	\
- safenet.h serial.h snmp-ups.h solis.h tripplite.h tripplite-hid.h 			\
+ safenet.h serial.h snmp-ups.h solis.h tripplite.h tripplite-hid.h 	zspace-hid.h		\
  upshandler.h usb-common.h usbhid-ups.h powercom-hid.h compaq-mib.h idowell-hid.h \
  apcsmart.h apcsmart_tabs.h apcsmart-old.h apcupsd-ups.h cyberpower-mib.h riello.h openups-hid.h \
  delta_ups-mib.h nutdrv_qx.h nutdrv_qx_bestups.h nutdrv_qx_blazer-common.h	\
